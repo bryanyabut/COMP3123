@@ -1,0 +1,28 @@
+#### Section B: Short Answer Questions
+
+**6. Explain the Purpose of `express.Router()` in the Code Above.**
+
+- Why is `express.Router()` used in Express.js applications, and how does it benefit the code structure?
+
++++Answer+++
+=== express.router() creates a new router object that can handle request in a modular and organized way. 
+=== it serves as a mini-application with middleware and routes but is limited to specific segment of your application
+
+**7. Error Handling in Express.js**
+
+- How would you implement error handling in the Express routes to ensure that any issues (such as file not found or server errors) are appropriately handled? Provide an example.
+
++++ Answer +++
+=== error handling ensures servers does not crash and returns the proper response when something goes wrong, such as server error
+=== I would use try/catch. Define the error-handling in middleware that will have four parameters (err, req, res, next).
+
+#### Section C: Bonus
+
+**7. Dynamic Port Binding in Express.js**
+
+- Explain how the `app.listen(process.env.port || 8081)` line works and why it's useful in production environments.
+
+---
++++ Answer +++
+=== processs.env.port checks if the environment has assigned a specific port for an application
+=== 8081 is the fallback port
