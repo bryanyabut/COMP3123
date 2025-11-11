@@ -58,7 +58,46 @@ const UserSignupForm = () => {
       {submitted ? (
         <div>
           <h2>Signup Successful!</h2>
-          <p>Welcome, {formData.firstName} {formData.lastName}!</p>
+          <p>Here is the data you submitted:</p>
+          <dl>
+            <dt>Username</dt>
+            <dd>{formData.username || '-'}</dd>
+
+            <dt>First Name</dt>
+            <dd>{formData.firstName || '-'}</dd>
+
+            <dt>Last Name</dt>
+            <dd>{formData.lastName || '-'}</dd>
+
+            <dt>Gender</dt>
+            <dd>{formData.gender || '-'}</dd>
+
+            <dt>Email</dt>
+            <dd>{formData.email || '-'}</dd>
+
+            <dt>Phone Number</dt>
+            <dd>{formData.phoneNumber || '-'}</dd>
+
+            <dt>Date of Birth</dt>
+            <dd>{formData.dateOfBirth || '-'}</dd>
+
+            <dt>Address</dt>
+            <dd>{formData.address || '-'}</dd>
+
+            <dt>Country</dt>
+            <dd>{formData.country ? formData.country.charAt(0).toUpperCase() + formData.country.slice(1) : '-'}</dd>
+
+            <dt>City</dt>
+            <dd>{formData.city || '-'}</dd>
+
+            <dt>Postal Code</dt>
+            <dd>{formData.postalCode || '-'}</dd>
+
+            <dt>Terms Accepted</dt>
+            <dd>{formData.termsAccepted ? 'Yes' : 'No'}</dd>
+
+          </dl>
+          <button onClick={() => setSubmitted(false)}>Edit</button>
         </div>
       ) : (
         <form onSubmit={handleSubmit}>
